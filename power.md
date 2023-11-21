@@ -1,5 +1,5 @@
 @def title = "Mambo Power"
-@def tags = ["syntax", "code"]
+@def tags = ["electricity", "market"]
 
 # Power Systems and Electricity Markets
 
@@ -16,6 +16,10 @@ Collaborative efforts between power systems and electricity markets are essentia
 ## Power System Operations
 
 1.  [Economic Dispatch](/power/economic_dispatch)
+
+## Electricity Markets
+
+1. [Convergence Bidding](/power/convergence_bidding)
 
 ## Survey and Research
 
