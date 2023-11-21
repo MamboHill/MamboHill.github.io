@@ -62,6 +62,40 @@ Follow these steps to set up a local Git repository:
 
 > **Note:** This setup is local to your machine. For collaboration with others, consider setting up a remote repository on a server accessible to all collaborators.
 
+## Setting Up Upstream Branch
+
+A git upstream branch is very closely related to a remote branch as we use the upstream branch that is used to track the remote repository by our local repository. 
+So, whenever there is a need of checking out a branch in Git from the remote repository, we use the git upstream branch hosted on the remote server (like GitHub). 
+In simpler terms, we can say that whenever we want to issue commands like `git fetch` or `git pull` without providing any argument, we are fetching or pulling the data from the upstream branch (that we set using the git set upstream command).
+
+![](/assets/images/GitUpstreamBranch.jpg)
+
+The image was captured from [Scaler Topics](https://www.scaler.com/topics/git/git-set-upstream/).
+
+We can set a git upstream branch using the following steps:
+
+1.  First, you need to clone a Git repository or create a new feature branch.
+2.  Next, you will have to set upstream branches in order to work properly. Upstream branches are closely associated with remote branches. Upstream branches define the branch tracked on the remote repository by your local remote branch (also called the remote tracking branch).
+3.  When creating a new branch, or when working with existing branches, it can be quite useful to know how you can set upstream branches on Git.
+
+Here are some ways to set the upstream branch:
+
+- **Set upstream branch using git push**: The easiest way to set the upstream branch is to use the `git push` command with the `-u` option for upstream branch. Alternatively, you can use the `--set-upstream` option that is equivalent to the `-u` option. For example, if you created a branch named `branch` using the checkout command, you can set the upstream branch using the following command: `git push -u origin branch`.
+
+- **Set upstream branch using an alias**: Another way to set the upstream branch is to define an alias for your `git push` command. In fact, pushing to HEAD is equivalent to pushing to a remote branch having the same name as your current branch. In order to avoid having to define the upstream every time you create a new branch, define an alias for the command we just wrote. For aliases, you have two choices, you can either create a git alias or a bash alias.
+
+Here is an example of how to set the upstream branch using an alias:
+```
+$ git config --global alias.pushd 'push --set-upstream origin HEAD'
+$ git pushd
+```
+
+
+This will set the upstream branch to the remote branch having the same name as your current branch.
+
+
+
+
 
 
 ![](/assets/images/GridRenewableInvestmentTrend.jpg)

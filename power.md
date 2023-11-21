@@ -11,24 +11,14 @@ Collaborative efforts between power systems and electricity markets are essentia
 
 ## Introduction
 
-1.   [Power Systems and Electricity Markets](/power/introduction)
-
-### test 1
-
-test 1
-
-#### test 2
-
-test 2
-
-##### test 3
-
-test 3
-
+1.  [Power Systems and Electricity Markets](/power/introduction)
 
 ## Power System Operations
-1. [Economic Dispatch](/power/economic_dispatch)
+
+1.  [Economic Dispatch](/power/economic_dispatch)
 
 ## Survey and Research
-1. [해외 송전망 문제 현황](/power/global_transmission_issue)
+
+1.  [미국 송전 계획 및 설비 확충 사례](/power/us_transmission_upgrade)
+1.  [해외 송전망 문제 현황](/power/global_transmission_issue)
 
