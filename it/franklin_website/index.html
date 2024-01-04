@@ -1,0 +1,54 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/styles/github.min.css"> <!-- bootstrap@5.3.1 and bootstrap icon@1.10--> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel=stylesheet  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin=anonymous > <link rel=stylesheet  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <link rel=stylesheet  href="/css/style.css"> <link rel=stylesheet  href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"> <link data-n-head=ssr  rel=stylesheet  href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin=anonymous  referrerpolicy=no-referrer  /> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin=anonymous  referrerpolicy=no-referrer  /> <!-- favicon generated through https://realfavicongenerator.net/--> <link rel=apple-touch-icon  sizes=180x180  href="/assets/icon/apple-touch-icon.png"> <link rel=icon  type="image/png" sizes=32x32  href="/assets/icon/favicon-32x32.png"> <link rel=icon  type="image/png" sizes=16x16  href="/assets/icon/favicon-16x16.png"> <link rel=manifest  href="/assets/icon/site.webmanifest"> <link rel=mask-icon  href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5"> <meta name=msapplication-TileColor  content="#da532c"> <meta name=theme-color  content="#ffffff"> <title>Franklin - Mambo IT</title> <header data-bs-theme=dark > <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <div class=container-fluid > <a href="#" class="navbar-brand d-flex align-items-center"> <svg xmlns="http://www.w3.org/2000/svg" width=16  height=16  fill=currentColor  class="bi bi-5-circle" viewBox="0 0 16 16"> <path d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm15 0A8 8 0 1 0 0 8a8 8 0 0 0 16 0Zm-8.006 4.158c-1.57 0-2.654-.902-2.719-2.115h1.237c.14.72.832 1.031 1.529 1.031.791 0 1.57-.597 1.57-1.681 0-.967-.732-1.57-1.582-1.57-.767 0-1.242.45-1.435.808H5.445L5.791 4h4.705v1.103H6.875l-.193 2.343h.064c.17-.258.715-.68 1.611-.68 1.383 0 2.561.944 2.561 2.585 0 1.687-1.184 2.806-2.924 2.806Z"/> </svg> <strong>Mambo Hill</strong> </a> <button class=navbar-toggler  type=button  data-bs-toggle=collapse  data-bs-target="#navbarCollapse" aria-controls=navbarCollapse  aria-expanded=false  aria-label="Toggle navigation"> <span class=navbar-toggler-icon ></span> </button> <div class="collapse navbar-collapse" id=navbarCollapse > <ul class="navbar-nav me-auto mb-2 mb-md-0"> <li class=nav-item > <a class=nav-link  aria-current=page  href="/">Home</a> <li class=nav-item > <a class=nav-link  href="/power/">Power</a> <li class=nav-item > <a class=nav-link  href="/science/">Science</a> <li class=nav-item > <a class=nav-link  href="/it/">IT</a> <li class=nav-item > <a class=nav-link  href="/health/">Health</a> <li class=nav-item > <a class=nav-link  href="/menu3/">Tags</a> </ul> <!-- <form class=d-flex  role=search > <input class="form-control me-2" type=search  placeholder=Search  aria-label=Search > <button class="btn btn-outline-success" type=submit >Search</button> </form> --> </div> </div> </nav> </header> <div class="container py-3 px-3 mx-auto"><div class=franklin-content ><h1 id="franklin을_이용하여_github에_static_website_hosting_하기"><a href="#franklin을_이용하여_github에_static_website_hosting_하기" class=header-anchor >Franklin을 이용하여 GitHub에 static Website hosting 하기</a></h1> <p>이 posting에서는 Julia 기반 Franklin 패키지를 사용하여 GitHub에서 웹사이트를 호스팅하는 방법에 대해 알아보겠습니다. Julia로 작성된 Franklin 패키지는 static 웹사이트를 구축하고 관리하는 데 탁월한 도구로, GitHub Pages와의 통합을 통해 간편한 호스팅을 제공합니다. 여기서는 Franklin 패키지를 사용하여 GitHub를 활용하여 웹사이트를 구축하고 배포하는 단계를 살펴볼 것입니다. </p> <p><div class=franklin-toc ><ol><li><a href="#julia_인스톨하기">Julia 인스톨하기</a><li><a href="#franklin_인스톨하기">Franklin 인스톨하기</a><li><a href="#website_생성하기">Website 생성하기</a><li><a href="#github에_repository_만들기">GitHub에 repository 만들기</a><li><a href="#로컬_웹사이트_폴더와_github_repository_동기화하기">로컬 웹사이트 폴더와 GitHub repository 동기화하기</a></ol></div> </p> <h2 id="julia_인스톨하기"><a href="#julia_인스톨하기" class=header-anchor >Julia 인스톨하기</a></h2> <p>윈도우즈 환경에서는 다음의 명령어로 Julia를 인스톨하도록 하자.</p> <pre><code class="julia hljs">&gt; winget install julia -s msstore</code></pre>
+<p>Julia 인스톨 및 사용에 대한 자세한 내용은 <a href="https://julialang.org/">Julia 공식 사이트</a>에서 확인할 수 있다.</p>
+<h2 id="franklin_인스톨하기"><a href="#franklin_인스톨하기" class=header-anchor >Franklin 인스톨하기</a></h2>
+<p>Franklin은 Julia REPL에서 다음과 같이 인스톨할 수 있다.</p>
+<pre><code class="julia hljs">pkg&gt; add Franklin</code></pre>
+<h2 id="website_생성하기"><a href="#website_생성하기" class=header-anchor >Website 생성하기</a></h2>
+<p>Franklin의 <code>newsite</code> 함수를 사용하여 Website를 생성할 수 있다.</p>
+<pre><code class="julia hljs">julia&gt; <span class=hljs-keyword >using</span> Franklin
+
+julia&gt; newsite(<span class=hljs-string >&quot;MamboFamily&quot;</span>; template=<span class=hljs-string >&quot;bootstrap5&quot;</span>)
+✓ Website folder generated at <span class=hljs-string >&quot;MamboFamily&quot;</span> (now the current directory).
+→ Use serve() from Franklin to see the website <span class=hljs-keyword >in</span> your browser.</code></pre>
+<p>Website가 생성된 후 다음과 같이 웹사이트를 로컬에서 시작할 수 있다.</p>
+<pre><code class="julia hljs">julia&gt; serve()</code></pre>
+<h2 id="github에_repository_만들기"><a href="#github에_repository_만들기" class=header-anchor >GitHub에 repository 만들기</a></h2>
+<p>GitHub에 <code>username.github.io</code> repository를 생성한다. 자세한 내용은 <a href="https://pages.github.com/">Github pages</a> 문서에서 확인할 수 있다.</p>
+<h2 id="로컬_웹사이트_폴더와_github_repository_동기화하기"><a href="#로컬_웹사이트_폴더와_github_repository_동기화하기" class=header-anchor >로컬 웹사이트 폴더와 GitHub repository 동기화하기</a></h2>
+<p><code>Git CMD</code>를 실행하고 웹사이트 폴더로 이동한수 다음의 명령을 실행한다.</p>
+<pre><code class="julia hljs">git init &amp;&amp; git remote add origin URL_TO_YOUR_REPO
+git add -A &amp;&amp; git commit -am <span class=hljs-string >&quot;initial files&quot;</span>
+git branch -M main
+git push -u origin main</code></pre>
+<p>위의 과정이 제대로 수행되면 GitHub repository에 push될 때마다 GitHub 액션이 트리거되어 __site 폴더의 내용을 gh-pages 브랜치에 배포하며, GitHub은 이를 통해 웹사이트를 배포합니다.</p>
+<div class=page-foot >
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Manho Joung. Last modified: January 04, 2024.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div></div> 
+
+<footer class=container >
+  <p class=float-end ><a href="#">Back to top</a></p>
+  <div class=footer-icons >
+      <ul class=social-icons >
+          <li><strong>Follow:</strong>
+          <li><a href="https://twitter.com/HillMambo91" rel="nofollow noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width=16  height=16  fill=currentColor  class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          </svg> X (Twitter)</a>
+          <li><a href="https://github.com/MamboHill" rel="nofollow noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width=16  height=16  fill=currentColor  class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg> GitHub</a>
+      </ul>
+  </div>
+  <p class=copyright >&copy; 2023 - Manho Joung · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity=sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm  crossorigin=anonymous ></script>
+
+
+  <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
