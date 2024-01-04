@@ -9,12 +9,12 @@ Dive into the intricacies of data science, blockchain, Internet of Things (IoT),
 
 \tableofcontents <!-- you can use \toc as well -->
 
-## Development
+## Envionment
 
 1.  [Git](/it/git)
 
-## Power System Operations
-1. [Economic Dispatch](/power/economic_dispatch)
+## Web
+1. [Static Website Hosting in GitHub Using Franklin](/it/franklin_website)
 
 ## Survey and Research
 1. [해외 송전망 문제 현황](/power/global_transmission_issue)
